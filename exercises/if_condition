@@ -1,0 +1,15 @@
+#!/bin/bash
+# Author: mr_floki
+# Date Created: 12/02/2021
+# Description: Practicing if condition
+# Date Modified: 12/02/2021
+
+echo -e '\n'Write a Number between 1/100'\n'
+read a
+
+if [ $a -ge 1 ] && [ $a -le 100 ]
+then
+	echo -e '\n'Good Choice!'\n'
+else
+	echo -e '\n'Wrong answer'\n'
+fi

@@ -1,0 +1,21 @@
+#!/bin/bash
+# Author: mr_floki
+# Date Created: 12/02/2021
+# Description: Testing case statement
+# Date Modified: 12/02/2021
+
+clear
+echo -e '\n'Please make a choice:'\n'
+echo 'a = Display Date and Time'
+echo 'b = Current Directory'
+echo 'c = User logged in'
+echo 'd = System Uptime'
+echo
+	read c
+	case $c in
+a) date;;
+b) pwd;;
+c) who;;
+d) uptime;;
+*) echo -e Wrong Choice'\n'
+	esac

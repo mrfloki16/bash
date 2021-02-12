@@ -1,0 +1,8 @@
+#!/bin/bash
+# Author : mr_floki
+# Date Created : 10/02/2021
+# Description : This Script will output "Hello World" on the screen
+# Date Modified : 11/02/2021
+
+echo -e '\nHello World\n'
+
