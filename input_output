@@ -1,0 +1,12 @@
+#!/bin/bash
+# Author: mr_floki
+# Date Created: 12-02-2021
+# Description: Testing i/o command
+# Date Modified: 12-02-2021
+
+a=`hostname`
+
+echo -e '\n'Hello, my server name is $a!'\n'
+echo -e What is your full name?'\n'
+read b
+echo -e '\n'Hello $b'\n'
