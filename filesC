@@ -2,23 +2,20 @@
 # Author: mr_floki
 # Date Created: 13/02/2021
 # Description: Copy and Rename a batch of files
-# Date Modified: 14/02/2021
+# Date Modified: 15/02/2021
 
 clear
 
 mkdir copy
-mkdir copy/s01
-mkdir copy/s02
-mkdir copy/s03
-mkdir copy/s04
-mkdir copy/s05
+for i in {1..5}; do
+	mkdir copy/s0$i
+done
 
 i=1
 s1=49
 s2=97
 s3=144
 s4=184
-s5=224
 
 for filename in *.mkv; do
         f=`echo "$filename" | cut -d ' ' -f 5-`
@@ -27,25 +24,21 @@ for filename in *.mkv; do
 	# Season 1
 	if [ $n -le $s1 ]; then
 		cp "$filename" "copy/s01/$n $f"
-	fi
 	
 	# Season 2
-	if [ $n -gt $s1 ] && [ $n -le $s2 ]; then
+	elif [ $n -gt $s1 ] && [ $n -le $s2 ]; then
 		cp "$filename" "copy/s02/$((n-$s1)) $f"
-	fi
 	
 	# Seson 3
-	if [ $n -gt $s2 ] && [ $n -le $s3 ]; then
+	elif [ $n -gt $s2 ] && [ $n -le $s3 ]; then
 		cp "$filename" "copy/s03/$((n-$s2)) $f"
-	fi
 
 	# Season 4
-	if [ $n -gt $s3 ] && [ $n -le $s4 ]; then
+	elif [ $n -gt $s3 ] && [ $n -le $s4 ]; then
 		cp "$filename" "copy/s04/$((n-$s3)) $f"
-	fi
 
 	# Season 5
-	if [ $n -gt $s4 ] && [ $n -le $s5 ]; then
+	else
 		cp "$filename" "copy/s05/$((n-$s4)) $f"
 	fi
 	
