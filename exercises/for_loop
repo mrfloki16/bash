@@ -1,0 +1,21 @@
+#!/bin/bash
+# Author: mr_floki
+# Date Created : 15/02/2021
+# Description: Practicing for loops
+# Date Modified: 15/02/2021
+
+i=1
+in=1
+temp=""
+
+for shell in `awk -F/ '{print $NF}' /etc/shells`
+do
+	if [ $in -eq 5 ]; then
+		if [[ $temp != $shell ]]; then
+			echo "Shell $((i++)) : $shell"
+			temp=$shell
+		fi
+	else
+		in=$((in+1))
+	fi
+done
