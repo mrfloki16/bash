@@ -1,0 +1,15 @@
+#!/bin/bash
+# Author: mr_floki
+# Date Created: 15/02/2021
+# Description: Practicing do while loops
+# Date Modified: 15/02/2021
+
+c=0
+n=10
+while [ $c -lt 10 ]; do
+        echo $n s  process $$
+        sleep 1
+	n=$((n-1))
+	c=$((c+1))
+done
+echo $$ process is stopped
