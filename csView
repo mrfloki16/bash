@@ -1,0 +1,13 @@
+#!/bin/bash
+# Author: mr_floki
+# Date Created: 17/02/2021
+# Description: Good view for csv file
+# Date Modified: 17/02/2021
+
+echo What is the name of your file?
+
+read file
+
+echo $file
+
+cat "$file" | perl -pe 's/((?<=,)|(?<=^)),/ ,/g;' | column -t -s, | less -S

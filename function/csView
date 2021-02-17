@@ -1,0 +1,14 @@
+#!/bin/bash
+# Author: mr_floki
+# Date Created: 17/02/2021
+# Description: A Function to view csv file
+# Date Modified: 17/02/2021
+
+# Put the function in ~/.profile
+# source ~/.profile
+# csView file.csv
+# Enjoy!
+
+function csView {
+    column -t -s, -n "$@" | less -F -S -X -K
+}
