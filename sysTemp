@@ -2,7 +2,8 @@
 # Author: mr_floki
 # Date Created: 16/02/2021
 # Description: Show temp and other sys informations
-# Date Modified: 16/02/2021
+# Date Modified: 18/02/2021
+# Requirement: figlet, lm-sensors
 
 echo "--------------------------"
 figlet temp

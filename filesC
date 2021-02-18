@@ -2,7 +2,7 @@
 # Author: mr_floki
 # Date Created: 13/02/2021
 # Description: Copy and Rename a batch of files
-# Date Modified: 15/02/2021
+# Date Modified: 18/02/2021
 
 clear
 
@@ -29,7 +29,7 @@ for filename in *.mkv; do
 	elif [ $n -gt $s1 ] && [ $n -le $s2 ]; then
 		cp "$filename" "copy/s02/$((n-$s1)) $f"
 	
-	# Seson 3
+	# Season 3
 	elif [ $n -gt $s2 ] && [ $n -le $s3 ]; then
 		cp "$filename" "copy/s03/$((n-$s2)) $f"
 
