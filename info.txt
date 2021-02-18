@@ -1,0 +1,52 @@
+######## Shell Scripting #######
+
+# Wich shell?
+$ echo $0
+$ cat /etc/shells
+$ cat /etc/passwd
+
+# Enter in a specific shell
+$ sh
+$ csh
+$ ksh
+
+# Run a Script
+## Absoluth path 
+$ /home/mr_floki/script
+## Relative path 
+$ ./script
+
+# Script naming convention
+## Scripts Directory e.g.
+$ /home/mr_floki/scripts
+## Script name should identify function e.g.
+$ /home/mr_floki/scripts/hello_world
+## Script should end with .shell if multiple shells scripts e.g.
+$ hello_world.bash
+
+# Script file persmission
+## Should have executable file permission
+-rwxr-xr--
+$  chmod +x file
+$ chmod u=rwx file
+## chmod e.g.
+all(a), user (u), groupe (g), other(o), 
+add(+), assign(0),remove(-)
+read(r), write(w), execute(x)
+
+#chmod#chown#chgrp#
+
+# Shell Script Format
+## Define Shell (she-bang)
+## comments: who, when, modification, purpose
+## Define Variables
+## Commands: echo, cp, grep, etc
+## Statements: if, for, while, etc
+## E.g.
+
+#!/bin/bash
+# mr_floki
+# Purpose: test script format
+# Date: 10/02/2021
+# Modification: 10/02/2021
+# ETC
