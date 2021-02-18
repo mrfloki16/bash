@@ -1,0 +1,39 @@
+#!/bin/bash
+# Author: mr_floki
+# Date Created: 18/02/2021
+# Description: Accessing Data From CP Messages
+# Date Modified: 18/02/2021
+
+# Clear The Sreen
+clear
+
+# Set up Variables
+LOCATION=/var/log/syslog
+ERROR="grep -i error $LOCATION"
+WARNING="grep -i warning $LOCATION"
+FAIL="grep -i fail $LOCATION"
+BOOL=true
+
+# Make the Programme Worked
+while [ $BOOL = true ]
+do
+	echo
+	echo Number of Error: `$ERROR | wc -l`
+	echo Number of Warning: `$WARNING | wc -l`
+	echo Number of Fail: `$FAIL | wc -l`
+	echo
+	echo Make a choice: 
+	echo "a = Check Error Messages"
+	echo "b = Check Warning Messages"
+	echo "c = Check Fail Messages"
+	echo "d = Quit"
+	echo
+	read CHOICE
+	case $CHOICE in
+		a) echo `$ERROR`;;
+		b) echo `$WARNING`;;
+		c) echo `$FAIL`;;
+		d) BOOL=false;;
+		*) echo "Make a better choice"
+	esac
+done
