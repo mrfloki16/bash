@@ -71,4 +71,23 @@ $ crontab -l [-u user]
 $ sudo apt install mailutils
 $ echo "testing message" | mail -s "message subject" username@example.com
 
+#####MSMTP########
+# Activate App with Less Security 
+$ sudo apt install msmtp
+$ vi /etc/msmtprc
+# set default values for all following accounts.                                     defaults
+auth on
+tls on
+tls_trust_file /etc/ssl/certs/ca-certificates.crt
+logfile ~/.msmtp.log
+# Gmail
+account gmail
+host smtp.gmail.com
+port 587
+from @gmail.com
+user @gmail.com
+password "password"
+
+# set default accout
+account default : gmail
 
