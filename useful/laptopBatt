@@ -1,0 +1,8 @@
+#!/bin/bash
+# Author: mr_floki
+# Date Created: 24/02/2021
+# Description: Print the % of the batterie
+# Date Modified: 26/02/2021
+
+num=`cat /sys/class/power_supply/BAT1/capacity`
+echo "Battery=$num%"
