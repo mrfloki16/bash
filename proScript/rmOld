@@ -1,0 +1,9 @@
+#!/bin/bash
+# Author: mr_floki
+# Date Created:01/03/2021
+# Description: Delete files 3 months old
+# Date Modified: 01/03/2021
+
+PLACE=/home/mr_floki
+
+find $PLACE -mtime +90 -exec rm {} \;
