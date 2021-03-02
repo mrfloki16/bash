@@ -1,0 +1,7 @@
+#!/bin/bash
+# Author: mr_floki
+# Date Created: 02/03/2021
+# Desacription: Told the binary path of the bash
+# Date Modified: 02/03/2021
+
+echo $PATH | awk -v RS=":" '{print}'
