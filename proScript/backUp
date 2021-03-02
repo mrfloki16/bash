@@ -1,0 +1,23 @@
+#!/bin/bash
+# Author: mr_floki
+# Date Created: 01/03/2021
+# Description: Creating and gzip backup to an other server
+# Date Modified: 02/03/2021
+
+USER=user
+HOST=host
+PATH=/path
+
+tar cvf /tmp/backup.tar /etc /var
+gzip backup.tar
+
+
+find backup.tar.gz -mtime -1 -type f -print &> /dev/null
+if [ $? -eq 0 ]
+	then
+	echo Backup done
+	echo Archiving backup to host
+	rsync -a --progress /tmp/backup.tar.gz $USER@$HOST:$PATH
+	else
+	echo Backup failed
+fi
