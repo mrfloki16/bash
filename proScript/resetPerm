@@ -1,0 +1,15 @@
+#!/bin/bash
+# Author: mr_floki
+# Date Created: 02/03/2021
+# Description: Restet permisiion of multiple files
+# Date Modified: 02/03/2021
+
+# set up variables
+GRP=groupe
+OWN=owner
+
+# updating files permisisons
+for file in *; do
+	sudo chgrp -R $GRP $file
+	sudo chown -R $OWN $file
+done
