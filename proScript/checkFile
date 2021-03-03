@@ -1,0 +1,17 @@
+#!/bin/bash
+# Author: mr_floki
+# Date Created: 03/03/2021
+# Description: check if files exists
+# Date Modified: 03/03/2021
+
+files="/etc/sudoers
+/etc/msmtprc
+/var/log/syslog"
+
+for file in $files; do 
+	if [ ! -e $file ]; then
+		echo $file = do not exist
+	else
+		echo $file = exist
+	fi
+done
