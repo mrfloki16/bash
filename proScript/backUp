@@ -6,7 +6,7 @@
 
 USER=user
 HOST=host
-PATH=/path
+LOCATION=/path
 
 tar cvf /tmp/backup.tar /etc /var
 gzip backup.tar
@@ -17,7 +17,7 @@ if [ $? -eq 0 ]
 	then
 	echo Backup done
 	echo Archiving backup to host
-	rsync -a --progress /tmp/backup.tar.gz $USER@$HOST:$PATH
+	rsync -a --progress /tmp/backup.tar.gz $USER@$HOST:$LOCATION
 	else
 	echo Backup failed
 fi
