@@ -8,11 +8,9 @@ USER=user
 HOST=host
 LOCATION=/path
 
-tar cvf /tmp/backup.tar /etc /var
-gzip backup.tar
+tar cvzf /tmp/backup.tgz /etc /var
 
-
-find backup.tar.gz -mtime -1 -type f -print &> /dev/null
+find /tmp/backup.tgz -mtime -1 -type f -print &> /dev/null
 if [ $? -eq 0 ]
 	then
 	echo Backup done
