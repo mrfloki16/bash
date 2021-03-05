@@ -1,0 +1,16 @@
+#!/bin/bash
+# Author: mr_floki
+# Date Created: 05/03/2021
+# Description: copy file to hosts
+# Date Modified: 05/03/2021
+
+cd /home
+for dir in *; do
+	find=$(grep -c "/home/$dir" /etc/passwd)
+	if [ $find -ge 1 ]; then
+		echo "$dir: Assigned"
+	else
+		echo "$dir: NOT assigned"
+	fi
+done
+
